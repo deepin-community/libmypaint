@@ -1,0 +1,24 @@
+From: Boyuan Yang <byang@debian.org>
+Date: Sun, 10 May 2020 11:37:51 -0400
+Subject: Makefile.am: Hardcode -release LDFLAGS for now
+
+This helps us not to introduce yet another meaningless transition.
+
+Forwarded: https://github.com/mypaint/libmypaint/issues/174
+---
+ Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index ae800a5..71b9d5f 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -90,7 +90,7 @@ LIBS = $(JSON_LIBS) $(GLIB_LIBS) @LIBS@
+ lib_LTLIBRARIES = libmypaint.la
+ 
+ libmypaint_la_LDFLAGS = \
+-    -release @LIBMYPAINT_API_PLATFORM_VERSION@ \
++    -release 1.5 \
+     -version-info @LIBMYPAINT_ABI_VERSION_INFO@ \
+     -no-undefined
+ 
