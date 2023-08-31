@@ -1,0 +1,4 @@
+0002-configure.ac-Force-using-python3.patch
+0002-Make-the-build-reproducible.patch
+0003-Makefile.am-Hardcode-release-LDFLAGS-for-now.patch
+0004-configure.ac-autoconf2.70-hack.patch

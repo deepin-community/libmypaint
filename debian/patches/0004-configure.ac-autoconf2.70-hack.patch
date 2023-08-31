@@ -1,0 +1,26 @@
+From: Boyuan Yang <byang@debian.org>
+Date: Mon, 18 Jan 2021 11:16:53 -0500
+Subject: configure.ac: autoconf2.70 hack
+
+Very dirty hack to make configure.ac compatible with
+autoconf 2.70.
+
+Forwarded: https://github.com/mypaint/libmypaint/issues/178
+Bug-Debian: https://bugs.debian.org/978854
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index 527d753..954b15b 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -236,7 +236,7 @@ if test "x$enable_i18n" != "xno"; then
+   AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE",
+                      [The prefix for our gettext translation domains.])
+   AC_SUBST(GETTEXT_PACKAGE)
+-  IT_PROG_INTLTOOL
++IT_PROG_INTLTOOL([0.50.1])
+   AM_GLIB_GNU_GETTEXT
+ 
+   dnl Debian: stdlib
